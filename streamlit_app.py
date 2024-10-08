@@ -23,7 +23,7 @@ def extract_invoice_number(pdf_file):
         for page in pdf.pages:
             text += page.extract_text()
 
-        # 使用正则表达式匹配发票号码
+        # 使用正则表达匹配发票号码
         match = re.search(r'发票号码[:：]\s*(\d+)', text)
         if match:
             return match.group(1)  # 返回发票号码
